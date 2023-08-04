@@ -81,15 +81,16 @@ async function fetchData(
   }
 }
 const page = 1;
-const limit = 20;
+const limit = 40;
 const period = 380;
 
 // Call the fetchData function with the specified parameters
 
 const Dashboard = (props: Props) => {
   const [data, setData] = useState<Video>();
+  const [timePeriod, setTimePeriod] = useState<number>(period);
   useEffect(() => {
-    fetchData(page, limit, period)
+    fetchData(page, limit, timePeriod)
       .then((data) => {
         setData(data?.data);
         console.log("API response:", data);
@@ -97,7 +98,7 @@ const Dashboard = (props: Props) => {
       .catch((error) => {
         console.error(error);
       });
-  }, []);
+  }, [timePeriod]);
   const bandwidthData = data?.bandwidth_consumption;
   const storageData = data?.storage_units;
   const assetDurationData = data?.asset_duration;
@@ -106,6 +107,16 @@ const Dashboard = (props: Props) => {
     <div>
       {/* headerdata */}
       <div className="">
+        <select
+          onChange={(e) => setTimePeriod(parseInt(e.target.value))}
+          id="underline_select"
+          className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"
+        >
+          <option value="365">Last 7 days</option>
+          <option value="355">Last 15 days</option>
+          <option value="380">last 20 days</option>
+          <option value="500">All data</option>
+        </select>
         <div className=" grid  gap-4 p-4 grid-cols-1 lg:grid-cols-3 mx-auto ">
           <div className="max-w-full lg:max-w-lg rounded-lg  px-6 pt-6 pb-10 dark:bg-[#1b1b1b] bg-gray-200 ">
             <p className="text-sm font-medium text-purple-500 dark:text-purple-300 ">
