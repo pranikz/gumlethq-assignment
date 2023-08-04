@@ -58,7 +58,7 @@ const chartdata = [
   },
 ];
 
-const baseUrl = "http://localhost:3000/api/hello";
+const baseUrl = "https://gumlethq-assignment.vercel.app/api/hello";
 
 async function fetchData(
   page: number,
