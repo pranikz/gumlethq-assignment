@@ -10,12 +10,14 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
+  BarChart,
+  Bar,
 } from "recharts";
 
 type Props = {};
 
 const baseUrl = "https://gumlethq-assignment.vercel.app/api/hello";
-
+// const baseUrl = "http://localhost:3000/api/hello";
 //use this url for local http://localhost:3000/api/hello
 
 async function fetchData(
@@ -170,7 +172,7 @@ const Dashboard = (props: Props) => {
           </h2>
           <div>
             <ResponsiveContainer width="95%" height={400}>
-              <LineChart
+              <BarChart
                 width={700}
                 height={500}
                 data={storageData}
@@ -184,13 +186,8 @@ const Dashboard = (props: Props) => {
                 <YAxis />
                 <Tooltip />
                 <Legend />
-                <Line
-                  type="monotone"
-                  dataKey="units"
-                  stroke="#8884d8"
-                  activeDot={{ r: 7 }}
-                />
-              </LineChart>
+                <Bar barSize={10} dataKey="units" fill="#8884d8" />
+              </BarChart>
             </ResponsiveContainer>
           </div>
         </div>
