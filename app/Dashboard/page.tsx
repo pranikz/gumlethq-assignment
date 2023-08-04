@@ -106,8 +106,8 @@ const Dashboard = (props: Props) => {
     <div>
       {/* headerdata */}
       <div className="">
-        <div className=" grid  gap-4 p-4 sm:grid-cols-1 lg:grid-cols-3 mx-auto ">
-          <div className="max-w-lg rounded-lg  px-6 pt-6 pb-10 dark:bg-[#1b1b1b] bg-gray-200 ">
+        <div className=" grid  gap-4 p-4 grid-cols-1 lg:grid-cols-3 mx-auto ">
+          <div className="max-w-full lg:max-w-lg rounded-lg  px-6 pt-6 pb-10 dark:bg-[#1b1b1b] bg-gray-200 ">
             <p className="text-sm font-medium text-purple-500 dark:text-purple-300 ">
               Top Duration
             </p>
@@ -116,7 +116,7 @@ const Dashboard = (props: Props) => {
             </p>
           </div>
 
-          <div className="max-w-lg rounded-lg  px-6 pt-6 pb-10 dark:bg-[#1b1b1b] bg-gray-200 ">
+          <div className="max-w-full lg:max-w-lg  rounded-lg  px-6 pt-6 pb-10 dark:bg-[#1b1b1b] bg-gray-200 ">
             <p className="text-sm font-medium text-purple-500 dark:text-purple-300 ">
               Storage Unit
             </p>
@@ -125,7 +125,7 @@ const Dashboard = (props: Props) => {
             </p>
           </div>
 
-          <div className="max-w-lg rounded-lg  px-6 pt-6 pb-10 dark:bg-[#1b1b1b] bg-gray-200 ">
+          <div className="w-full lg:max-w-lg  rounded-lg  px-6 pt-6 pb-10 dark:bg-[#1b1b1b] bg-gray-200 ">
             <p className="text-sm font-medium text-purple-500 dark:text-purple-300 ">
               Total Bandwidth
             </p>
@@ -235,7 +235,7 @@ const Dashboard = (props: Props) => {
                 <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
                   <div className="overflow-hidden">
                     <table className="min-w-full text-left text-sm font-light ">
-                      <thead className="border-b font-medium dark:border-neutral-500 dark:bg-purple-950 rounded-full ">
+                      <thead className="border-b font-medium dark:border-neutral-500 bg-purple-500 dark:bg-purple-950 rounded-full ">
                         <tr>
                           <th scope="col" className="px-6 py-4">
                             ID
