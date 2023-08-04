@@ -41,7 +41,7 @@ async function fetchData(
 
 const page = 1;
 const limit = 40;
-const period = 380;
+const period = 365;
 
 const Dashboard = (props: Props) => {
   const [data, setData] = useState<Video>();
