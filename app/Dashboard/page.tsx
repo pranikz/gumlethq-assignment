@@ -10,6 +10,7 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
+  ResponsiveContainer,
 } from "recharts";
 type Props = {};
 
@@ -107,41 +108,42 @@ const Dashboard = (props: Props) => {
     <div>
       {/* headerdata */}
       <div className="">
-        <select
-          onChange={(e) => setTimePeriod(parseInt(e.target.value))}
-          id="underline_select"
-          className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"
-        >
-          <option value="365">Last 7 days</option>
-          <option value="355">Last 15 days</option>
-          <option value="380">last 20 days</option>
-          <option value="500">All data</option>
-        </select>
+        <div className="mx-5 lg:mx-auto">
+          <select
+            onChange={(e) => setTimePeriod(parseInt(e.target.value))}
+            id="underline_select"
+            className="bg-gray-50 lg:ml-5 lg:max-w-md border  border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          >
+            <option value="365">Last 7 days</option>
+            <option value="375">Last 10 days</option>
+            <option value="385">last 20 days</option>
+            <option value="395">last 30 days</option>
+            <option value="500">All data</option>
+          </select>
+        </div>
         <div className=" grid  gap-4 p-4 grid-cols-1 lg:grid-cols-3 mx-auto ">
           <div className="max-w-full lg:max-w-lg rounded-lg  px-6 pt-6 pb-10 dark:bg-[#1b1b1b] bg-gray-200 ">
             <p className="text-sm font-medium text-purple-500 dark:text-purple-300 ">
               Top Duration
             </p>
-            <p className="text-4xl font-medium text-gray-800 dark:text-gray-200">
-              {data?.total_data_top_duration.toFixed(3)}&nbsp;Hours
+            <p className="text-2xl lg:text-4xl font-medium text-gray-800 dark:text-gray-200">
+              {data?.total_data_top_duration.toFixed(2)}&nbsp;Hours
             </p>
           </div>
-
           <div className="max-w-full lg:max-w-lg  rounded-lg  px-6 pt-6 pb-10 dark:bg-[#1b1b1b] bg-gray-200 ">
             <p className="text-sm font-medium text-purple-500 dark:text-purple-300 ">
               Storage Unit
             </p>
-            <p className="text-4xl font-medium text-gray-800 dark:text-gray-200">
-              {data?.total_storage_unit_consumption.toFixed(3)}&nbsp;Hours
+            <p className="text-2xl lg:text-4xl font-medium text-gray-800 dark:text-gray-200">
+              {data?.total_storage_unit_consumption.toFixed(2)}&nbsp;Hours
             </p>
           </div>
-
           <div className="w-full lg:max-w-lg  rounded-lg  px-6 pt-6 pb-10 dark:bg-[#1b1b1b] bg-gray-200 ">
             <p className="text-sm font-medium text-purple-500 dark:text-purple-300 ">
               Total Bandwidth
             </p>
-            <p className="text-4xl font-medium text-gray-800 dark:text-gray-200">
-              {data?.total_bandwidth_consumption.toFixed(3)}&nbsp;Hours
+            <p className="text-2xl lg:text-4xl font-medium text-gray-800 dark:text-gray-200">
+              {data?.total_bandwidth_consumption.toFixed(2)}&nbsp;Hours
             </p>
           </div>
         </div>
@@ -154,28 +156,27 @@ const Dashboard = (props: Props) => {
             Bandwidth Usage
           </h2>
           <div>
-            {" "}
-            <LineChart
-              width={700}
-              height={500}
-              data={bandwidthData}
-              margin={{
-                top: 5,
-                bottom: 5,
-                left: 10,
-              }}
-            >
-              <XAxis dataKey="timestamp" />
-              <YAxis />
-              <Tooltip />
-              <Legend />
-              <Line
-                type="monotone"
-                dataKey="units"
-                stroke="#8884d8"
-                activeDot={{ r: 7 }}
-              />
-            </LineChart>
+            <ResponsiveContainer width="95%" height={400}>
+              <LineChart
+                data={bandwidthData}
+                margin={{
+                  top: 5,
+                  bottom: 5,
+                  left: 10,
+                }}
+              >
+                <XAxis dataKey="timestamp" />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Line
+                  type="monotone"
+                  dataKey="units"
+                  stroke="#8884d8"
+                  activeDot={{ r: 7 }}
+                />
+              </LineChart>
+            </ResponsiveContainer>
           </div>
         </div>
         <div className="dark:bg-[#1b1b1b] bg-gray-200  p-4 rounded-md">
@@ -183,28 +184,29 @@ const Dashboard = (props: Props) => {
             Asset Usage
           </h2>
           <div>
-            {" "}
-            <LineChart
-              width={700}
-              height={500}
-              data={assetDurationData}
-              margin={{
-                top: 5,
-                bottom: 5,
-                left: 10,
-              }}
-            >
-              <XAxis dataKey="timestamp" />
-              <YAxis />
-              <Tooltip />
-              <Legend />
-              <Line
-                type="monotone"
-                dataKey="units"
-                stroke="#8884d8"
-                activeDot={{ r: 7 }}
-              />
-            </LineChart>
+            <ResponsiveContainer width="95%" height={400}>
+              <LineChart
+                width={700}
+                height={500}
+                data={assetDurationData}
+                margin={{
+                  top: 5,
+                  bottom: 5,
+                  left: 10,
+                }}
+              >
+                <XAxis dataKey="timestamp" />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Line
+                  type="monotone"
+                  dataKey="units"
+                  stroke="#8884d8"
+                  activeDot={{ r: 7 }}
+                />
+              </LineChart>
+            </ResponsiveContainer>
           </div>
         </div>
         <div className="dark:bg-[#1b1b1b] bg-gray-200  p-4 rounded-md ">
@@ -212,28 +214,29 @@ const Dashboard = (props: Props) => {
             Storage Usage
           </h2>
           <div>
-            {" "}
-            <LineChart
-              width={700}
-              height={500}
-              data={storageData}
-              margin={{
-                top: 5,
-                bottom: 5,
-                left: 10,
-              }}
-            >
-              <XAxis dataKey="timestamp" />
-              <YAxis />
-              <Tooltip />
-              <Legend />
-              <Line
-                type="monotone"
-                dataKey="units"
-                stroke="#8884d8"
-                activeDot={{ r: 7 }}
-              />
-            </LineChart>
+            <ResponsiveContainer width="95%" height={400}>
+              <LineChart
+                width={700}
+                height={500}
+                data={storageData}
+                margin={{
+                  top: 5,
+                  bottom: 5,
+                  left: 10,
+                }}
+              >
+                <XAxis dataKey="timestamp" />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Line
+                  type="monotone"
+                  dataKey="units"
+                  stroke="#8884d8"
+                  activeDot={{ r: 7 }}
+                />
+              </LineChart>
+            </ResponsiveContainer>
           </div>
         </div>
         <div className="dark:bg-[#1b1b1b] bg-gray-200  p-4 rounded-md">
