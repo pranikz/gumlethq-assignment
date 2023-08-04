@@ -52,7 +52,7 @@ const Dashboard = (props: Props) => {
       {/* headerdata */}
       <div className="">
         <div className=" grid  gap-4 p-4 sm:grid-cols-2 lg:grid-cols-3 mx-auto ">
-          <div className="max-w-lg rounded-lg border border-black px-6 pt-6 pb-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] dark:from-gray-700 dark:via-gray-900 dark:to-black  from-gray-200 via-gray-400 to-gray-600 ">
+          <div className="max-w-lg rounded-lg  px-6 pt-6 pb-10 dark:bg-[#1b1b1b] bg-gray-200 ">
             <p className="text-sm font-medium text-gray-500 dark:text-gray-100">
               Top Duration
             </p>
@@ -61,7 +61,7 @@ const Dashboard = (props: Props) => {
             </p>
           </div>
 
-          <div className="max-w-lg rounded-lg border border-black px-6 pt-6 pb-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] dark:from-gray-700 dark:via-gray-900 dark:to-black  from-gray-200 via-gray-400 to-gray-600 ">
+          <div className="max-w-lg rounded-lg  px-6 pt-6 pb-10 dark:bg-[#1b1b1b] bg-gray-200 ">
             <p className="text-sm font-medium text-gray-500 dark:text-gray-100">
               Storage Unit
             </p>
@@ -70,7 +70,7 @@ const Dashboard = (props: Props) => {
             </p>
           </div>
 
-          <div className="max-w-lg rounded-lg border border-black px-6 pt-6 pb-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] dark:from-gray-700 dark:via-gray-900 dark:to-black  from-gray-200 via-gray-400 to-gray-600 ">
+          <div className="max-w-lg rounded-lg  px-6 pt-6 pb-10 dark:bg-[#1b1b1b] bg-gray-200 ">
             <p className="text-sm font-medium text-gray-500 dark:text-gray-100">
               Total Bandwidth
             </p>
@@ -83,26 +83,26 @@ const Dashboard = (props: Props) => {
 
       {/* chart data */}
       <div className="grid gap-4 grid-cols-2 w-[98%] mx-auto ">
-        <div className=" bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] dark:from-gray-700 dark:via-gray-900 dark:to-black  from-gray-200 via-gray-400 to-gray-600  p-4 rounded-md ">
-          <h2 className="text-gray-600 text-lg font-semibold pb-4">
+        <div className=" dark:bg-[#1b1b1b] bg-gray-200  p-4 rounded-md ">
+          <h2 className="text-purple-500 dark:text-purple-300  text-lg font-semibold pb-4">
             Streaming Usage
           </h2>
           <div>Hello</div>
         </div>
-        <div className="bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] dark:from-gray-700 dark:via-gray-900 dark:to-black  from-gray-200 via-gray-400 to-gray-600  p-4 rounded-md">
-          <h2 className="text-gray-600 text-lg font-semibold pb-4">
+        <div className="dark:bg-[#1b1b1b] bg-gray-200  p-4 rounded-md">
+          <h2 className="text-purple-500 dark:text-purple-300  text-lg font-semibold pb-4">
             Transcoding Usage
           </h2>
           <div>Hello</div>
         </div>
-        <div className="bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] dark:from-gray-700 dark:via-gray-900 dark:to-black  from-gray-200 via-gray-400 to-gray-600  p-4 rounded-md ">
-          <h2 className="text-gray-600 text-lg font-semibold pb-4">
+        <div className="dark:bg-[#1b1b1b] bg-gray-200  p-4 rounded-md ">
+          <h2 className="text-purple-500 dark:text-purple-300  text-lg font-semibold pb-4">
             Storage Usage
           </h2>
           <div>Hello</div>
         </div>
-        <div className="bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] dark:from-gray-700 dark:via-gray-900 dark:to-black  from-gray-200 via-gray-400 to-gray-600  p-4 rounded-md">
-          <h2 className="text-gray-600 text-lg font-semibold pb-4">
+        <div className="dark:bg-[#1b1b1b] bg-gray-200  p-4 rounded-md">
+          <h2 className="text-purple-500 dark:text-purple-300  text-lg font-semibold pb-4">
             Top assets
           </h2>
           <div>Hello</div>
