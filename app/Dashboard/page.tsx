@@ -35,7 +35,7 @@ const period = 380;
 // Call the fetchData function with the specified parameters
 
 const Dashboard = (props: Props) => {
-  const [data, setData] = useState<Apiresponse<Video>>({});
+  const [data, setData] = useState<Apiresponse<Video>>();
   useEffect(() => {
     fetchData(page, limit, period)
       .then((data) => {
