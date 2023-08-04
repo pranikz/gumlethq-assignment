@@ -4,7 +4,7 @@
 
 ## Overview :clipboard:
 
-This project is a web application created as part of the GumletHQ assignment. It is built using Next.js, styled with Tailwind CSS, and utilizes Axios for data fetching. The application displays JSON data provided in the assignment.
+This project is a web application created as part of the GumletHQ assignment. It is built using Next.js, styled with Tailwind CSS, and utilizes Axios for data fetching. The application displays JSON data provided in the assignment with the help of Recharts.
 
 ## Technologies Used :computer:
 
