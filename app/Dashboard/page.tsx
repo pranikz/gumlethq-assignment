@@ -35,11 +35,11 @@ const period = 380;
 // Call the fetchData function with the specified parameters
 
 const Dashboard = (props: Props) => {
-  const [data, setData] = useState<Apiresponse<Video>>();
+  const [data, setData] = useState<Video>();
   useEffect(() => {
     fetchData(page, limit, period)
       .then((data) => {
-        setData(data);
+        setData(data?.data);
         console.log("API response:", data);
       })
       .catch((error) => {
@@ -57,7 +57,7 @@ const Dashboard = (props: Props) => {
               Top Duration
             </p>
             <p className="text-4xl font-medium text-gray-800 dark:text-gray-200">
-              {data?.data?.total_data_top_duration.toFixed(3)}&nbsp;Hours
+              {data?.total_data_top_duration.toFixed(3)}&nbsp;Hours
             </p>
           </div>
 
@@ -66,7 +66,7 @@ const Dashboard = (props: Props) => {
               Storage Unit
             </p>
             <p className="text-4xl font-medium text-gray-800 dark:text-gray-200">
-              {data?.data?.total_storage_unit_consumption.toFixed(3)}&nbsp;Hours
+              {data?.total_storage_unit_consumption.toFixed(3)}&nbsp;Hours
             </p>
           </div>
 
@@ -75,7 +75,7 @@ const Dashboard = (props: Props) => {
               Total Bandwidth
             </p>
             <p className="text-4xl font-medium text-gray-800 dark:text-gray-200">
-              {data?.data?.total_bandwidth_consumption.toFixed(3)}&nbsp;Hours
+              {data?.total_bandwidth_consumption.toFixed(3)}&nbsp;Hours
             </p>
           </div>
         </div>
