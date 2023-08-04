@@ -39,8 +39,11 @@ pnpm dev
 
 ## Screenshots :camera:
 
-![image](https://github.com/pranikz/gumlethq-assignment/assets/44764138/2a4c2b64-a4b1-4e5b-ac13-d183f82ee60e)
-![image](https://github.com/pranikz/gumlethq-assignment/assets/44764138/8d13e252-5f11-469c-9ce6-173a65be4007)
+
+![image](https://github.com/pranikz/gumlethq-assignment/assets/44764138/a89cc999-fd28-4591-b037-e9a249082173)
+![image](https://github.com/pranikz/gumlethq-assignment/assets/44764138/8cd4773c-1070-4314-8bca-d28c8753f14c)
+
+
 
 
 
