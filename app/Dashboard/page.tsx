@@ -94,7 +94,6 @@ const Dashboard = (props: Props) => {
     fetchData(page, limit, timePeriod)
       .then((data) => {
         setData(data?.data);
-        console.log("API response:", data);
       })
       .catch((error) => {
         console.error(error);

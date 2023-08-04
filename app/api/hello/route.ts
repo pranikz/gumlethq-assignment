@@ -12,11 +12,11 @@ export async function GET(
 
   const { searchParams } = new URL(request.url);
   const page = Number(searchParams.get("page"));
-  console.log(page);
+
   const limit = Number(searchParams.get("limit"));
-  console.log(limit);
+
   const period = Number(searchParams.get("period"));
-  console.log(period);
+
 
   if (!page || !limit || !period) {
     return NextResponse.json({
